@@ -1,0 +1,22 @@
+<%= form_with(model: url_catalog) do |form| %>
+  <% if url_catalog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(url_catalog.errors.count, "error") %> prohibited this url_catalog from being saved:</h2>
+
+      <ul>
+        <% url_catalog.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

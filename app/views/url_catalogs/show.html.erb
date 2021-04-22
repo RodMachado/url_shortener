@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @url_catalog.url %>
+</p>
+
+<p>
+  <strong>Url hash:</strong>
+  <%= @url_catalog.url_hash %>
+</p>
+
+<%= link_to 'Edit', edit_url_catalog_path(@url_catalog) %> |
+<%= link_to 'Back', url_catalogs_path %>

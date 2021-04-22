@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Url Catalogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Url hash</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @url_catalogs.each do |url_catalog| %>
+      <tr>
+        <td><%= url_catalog.url %></td>
+        <td><%= "#{root_url}#{url_catalog.url_hash}" %></td>
+        <td><%= link_to 'Show', url_catalog %></td>
+        <td><%= link_to 'Edit', edit_url_catalog_path(url_catalog) %></td>
+        <td><%= link_to 'Destroy', url_catalog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Url Catalog', new_url_catalog_path %>
